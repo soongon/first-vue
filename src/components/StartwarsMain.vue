@@ -1,20 +1,14 @@
 <template>
-  <h3>영화목록</h3>
-  <p>
-    <button @click="buttonClicked()">최신 글 가져오기</button>
-  </p>
-  <ul>
-    <li v-for="film in films" :key="film.episode_id">
-      에피소드 아이디: {{ film.episode_id }} | 
-      제목: {{ film.title }}
-      <p>감독 : {{ film.director }}</p>
-    </li>
-  </ul>
+  <starwars-main-title :movieTitle="movieTitle"></starwars-main-title>
+  <starwars-main-list :films='films'></starwars-main-list>
 </template>
 
 <script>
 import axios from 'axios';
+import StarwarsMainTitle from './StarwarsMainTitle.vue';
+import StarwarsMainList from './StarwarsMainList.vue';
 export default {
+  components: { StarwarsMainTitle, StarwarsMainList },
     created() {
         this.getData();
     },
@@ -30,6 +24,7 @@ export default {
     data() {
         return {
             films: [],
+            movieTitle: '영화목록.. 입니다.',
         }
     },
 }
