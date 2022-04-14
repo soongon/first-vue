@@ -1,5 +1,5 @@
 <template>
-  <startwars-header></startwars-header>
+  <startwars-header>스타워즈</startwars-header>
   <startwars-main></startwars-main>
   <starwars-footer></starwars-footer>
 </template>

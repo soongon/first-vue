@@ -4,7 +4,14 @@
 
 <script>
 export default {
-    props: ['movieTitle']
+    props: {
+        movieTitle: {
+            type: String,
+            default() {
+                return '제목없음';
+            }
+        }
+    }
 }
 </script>
 
