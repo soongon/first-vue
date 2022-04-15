@@ -1,11 +1,10 @@
 <template>
   <starwars-main-title></starwars-main-title>
-  <starwars-main-list :films='films'></starwars-main-list>
+  <starwars-main-list></starwars-main-list>
   {{ PIE }}
 </template>
 
 <script>
-import axios from 'axios';
 import StarwarsMainTitle from './StarwarsMainTitle.vue';
 import StarwarsMainList from './StarwarsMainList.vue';
 import movie from '../mixins/movieMixin';
@@ -15,23 +14,6 @@ export default {
   mixins: [
     movie,
   ],
-    created() {
-        this.getData();
-    },
-    methods: {
-        async getData() {
-            axios.get('https://swapi.dev/api/films')
-            .then(result => {
-                this.films = result.data.results;
-                //console.log(result.data.results);
-                });
-            }
-    },
-    data() {
-        return {
-            films: [],
-        }
-    },
 }
 </script>
 
